@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xenos | Space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CANVAS BACKGROUND -->
+  <canvas id="starCanvas"></canvas>
+  <div class="nebula-bg"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon"><i class="fas fa-atom"></i></span>
+        <span class="logo-text">XENOS<span class="logo-accent">|</span>SPACE</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i><span>Home</span></a></li>
+        <li><a href="#cosmos" class="nav-link"><i class="fas fa-globe"></i><span>Cosmos</span></a></li>
+        <li><a href="#galaxy" class="nav-link"><i class="fas fa-star"></i><span>Galaxy</span></a></li>
+        <li><a href="#planets" class="nav-link"><i class="fas fa-circle"></i><span>Planets</span></a></li>
+        <li><a href="#missions" class="nav-link"><i class="fas fa-rocket"></i><span>Missions</span></a></li>
+        <li><a href="#observatory" class="nav-link"><i class="fas fa-telescope"></i><span>Observatory</span></a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button class="btn-launch"><i class="fas fa-satellite"></i><span>Launch</span></button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <div class="ham-lines">
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+            <span class="line line-3"></span>
+          </div>
+          <div class="ham-glow"></div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-bg"></div>
+      <div class="mobile-menu-inner">
+        <div class="mobile-menu-header">
+          <span class="mm-title">NAVIGATION</span>
+          <div class="mm-line"></div>
+        </div>
+        <ul class="mobile-nav-links">
+          <li style="--i:1"><a href="#home" class="mob-link"><i class="fas fa-home"></i>Home</a></li>
+          <li style="--i:2"><a href="#cosmos" class="mob-link"><i class="fas fa-globe"></i>Cosmos</a></li>
+          <li style="--i:3"><a href="#galaxy" class="mob-link"><i class="fas fa-star"></i>Galaxy</a></li>
+          <li style="--i:4"><a href="#planets" class="mob-link"><i class="fas fa-circle"></i>Planets</a></li>
+          <li style="--i:5"><a href="#missions" class="mob-link"><i class="fas fa-rocket"></i>Missions</a></li>
+          <li style="--i:6"><a href="#observatory" class="mob-link"><i class="fas fa-telescope"></i>Observatory</a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+          <button class="btn-launch-mob"><i class="fas fa-satellite"></i> Launch Mission</button>
+          <div class="mm-socials">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="mobile-orbs">
+          <span class="m-orb m-orb-1"></span>
+          <span class="m-orb m-orb-2"></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge"><i class="fas fa-satellite-dish"></i> Live from Deep Space</div>
+      <h1 class="hero-title">
+        <span class="typing-line">
+          <span id="typingText"></span><span class="cursor-blink">|</span>
+        </span>
+      </h1>
+      <p class="hero-sub">Charting the infinite expanse of the cosmos — from distant nebulae to the edge of the observable universe.</p>
+      <div class="hero-cta">
+        <button class="btn-primary"><i class="fas fa-rocket"></i> Explore Universe</button>
+        <button class="btn-outline"><i class="fas fa-play-circle"></i> Watch Documentary</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-target="2000">0</span><span class="stat-unit">B+</span><span class="stat-label">Light Years</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num" data-target="400">0</span><span class="stat-unit">B</span><span class="stat-label">Stars Mapped</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num" data-target="8">0</span><span class="stat-unit"></span><span class="stat-label">Planets Studied</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="planet-system">
+        <div class="solar-ring ring-1"></div>
+        <div class="solar-ring ring-2"></div>
+        <div class="solar-ring ring-3"></div>
+        <div class="planet-core">
+          <div class="planet-glow"></div>
+          <div class="planet-surface"></div>
+          <div class="planet-atmos"></div>
+        </div>
+        <div class="orbit-dot dot-1"><span></span></div>
+        <div class="orbit-dot dot-2"><span></span></div>
+        <div class="orbit-dot dot-3"><span></span></div>
+      </div>
+    </div>
+    <div class="scroll-hint"><span></span>Scroll to Explore</div>
+  </section>
+
+  <!-- DASHBOARD STATS -->
+  <section class="dashboard" id="cosmos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-chart-line"></i> Observatory Data</span>
+        <h2 class="section-title">Cosmos <span class="accent">Dashboard</span></h2>
+        <p class="section-sub">Real-time data streams from telescopes across the solar system</p>
+      </div>
+
+      <div class="dash-grid">
+        <div class="dash-card dash-card--wide" data-tilt>
+          <div class="card-header">
+            <span><i class="fas fa-sun"></i> Solar Activity</span>
+            <span class="card-badge live"><i class="fas fa-circle"></i> LIVE</span>
+          </div>
+          <div class="solar-chart">
+            <div class="chart-bars">
+              <div class="bar" style="--h:60%"><span>M</span></div>
+              <div class="bar" style="--h:80%"><span>T</span></div>
+              <div class="bar" style="--h:45%"><span>W</span></div>
+              <div class="bar" style="--h:90%"><span>T</span></div>
+              <div class="bar active" style="--h:70%"><span>F</span></div>
+              <div class="bar" style="--h:55%"><span>S</span></div>
+              <div class="bar" style="--h:85%"><span>S</span></div>
+            </div>
+            <div class="chart-label">Solar Flux (SFU)</div>
+          </div>
+          <div class="card-footer">
+            <span class="cf-stat"><i class="fas fa-arrow-up"></i> 12.4% intensity</span>
+            <span class="cf-date">Updated: Just now</span>
+          </div>
+        </div>
+
+        <div class="dash-card" data-tilt>
+          <div class="card-header"><span><i class="fas fa-moon"></i> Lunar Phase</span></div>
+          <div class="moon-display">
+            <div class="moon-orb">
+              <div class="moon-shadow"></div>
+              <div class="moon-craters">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="moon-info">
+              <p class="moon-phase">Waxing Gibbous</p>
+              <p class="moon-pct">73% illuminated</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-card" data-tilt>
+          <div class="card-header"><span><i class="fas fa-meteor"></i> Meteor Shower</span></div>
+          <div class="meteor-info">
+            <div class="mi-row"><span>Perseid Stream</span><span class="mi-badge active">Active</span></div>
+            <div class="mi-row"><span>Peak Rate</span><span class="mi-val">100/hr</span></div>
+            <div class="mi-row"><span>Visibility</span><span class="mi-val">Excellent</span></div>
+          </div>
+        </div>
+
+        <div class="dash-card" data-tilt>
+          <div class="card-header"><span><i class="fas fa-satellite"></i> Satellites</span></div>
+          <div class="sat-counter">
+            <div class="sat-ring">
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="40" class="ring-bg"/>
+                <circle cx="50" cy="50" r="40" class="ring-fill" stroke-dasharray="190 251"/>
+              </svg>
+              <div class="sat-num">4,879</div>
+            </div>
+            <p class="sat-label">Active Orbit</p>
+          </div>
+        </div>
+
+        <div class="dash-card" data-tilt>
+          <div class="card-header"><span><i class="fas fa-wind"></i> Solar Wind</span></div>
+          <div class="wind-data">
+            <div class="wind-speed"><span class="ws-num">482</span><span class="ws-unit">km/s</span></div>
+            <div class="wind-bar-wrap">
+              <div class="wind-bar" style="--w:68%"></div>
+            </div>
+            <p class="wind-status">Moderate Stream</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALAXY SECTION -->
+  <section class="galaxy-section" id="galaxy">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-star"></i> Deep Field</span>
+        <h2 class="section-title">Galaxy <span class="accent">Catalog</span></h2>
+        <p class="section-sub">Exploring the structure and formation of galaxies across cosmic time</p>
+      </div>
+
+      <div class="galaxy-grid">
+        <div class="gal-card">
+          <div class="gal-img gal-milkyway">
+            <div class="gal-overlay"></div>
+            <span class="gal-type">Spiral</span>
+          </div>
+          <div class="gal-info">
+            <h3>Milky Way</h3>
+            <p>Our home galaxy — a barred spiral spanning ~100,000 light-years with an estimated 400 billion stars.</p>
+            <div class="gal-meta">
+              <span><i class="fas fa-ruler"></i> 100k ly</span>
+              <span><i class="fas fa-star"></i> 400B stars</span>
+            </div>
+            <button class="btn-card">Explore <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <div class="gal-card">
+          <div class="gal-img gal-andromeda">
+            <div class="gal-overlay"></div>
+            <span class="gal-type">Spiral</span>
+          </div>
+          <div class="gal-info">
+            <h3>Andromeda</h3>
+            <p>Nearest large galaxy to the Milky Way. On course for a colossal galactic merger in ~4.5 billion years.</p>
+            <div class="gal-meta">
+              <span><i class="fas fa-ruler"></i> 220k ly</span>
+              <span><i class="fas fa-star"></i> 1T stars</span>
+            </div>
+            <button class="btn-card">Explore <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <div class="gal-card">
+          <div class="gal-img gal-sombrero">
+            <div class="gal-overlay"></div>
+            <span class="gal-type">Lenticular</span>
+          </div>
+          <div class="gal-info">
+            <h3>Sombrero Galaxy</h3>
+            <p>Known for its striking dust lane and large central bulge — a merger between a giant elliptical and a spiral.</p>
+            <div class="gal-meta">
+              <span><i class="fas fa-ruler"></i> 50k ly</span>
+              <span><i class="fas fa-map-marker-alt"></i> 28M ly away</span>
+            </div>
+            <button class="btn-card">Explore <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANETS SECTION -->
+  <section class="planets-section" id="planets">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-circle"></i> Solar System</span>
+        <h2 class="section-title">Planet <span class="accent">Explorer</span></h2>
+        <p class="section-sub">Navigate through the eight worlds of our solar neighborhood</p>
+      </div>
+
+      <div class="planet-track">
+        <div class="ptrack-scroll" id="planetScroll">
+          <div class="planet-item pi-mercury">
+            <div class="pi-orb"><div class="pi-surface"></div><div class="pi-shine"></div></div>
+            <h4>Mercury</h4>
+            <p>Closest to Sun</p>
+            <span class="pi-dist">0.39 AU</span>
+          </div>
+          <div class="planet-item pi-venus">
+            <div class="pi-orb"><div class="pi-surface"></div><div class="pi-shine"></div></div>
+            <h4>Venus</h4>
+            <p>Morning Star</p>
+            <span class="pi-dist">0.72 AU</span>
+          </div>
+          <div class="planet-item pi-earth">
+            <div class="pi-orb"><div class="pi-surface"></div><div class="pi-shine"></div></div>
+            <h4>Earth</h4>
+            <p>Our Home</p>
+            <span class="pi-dist">1.00 AU</span>
+          </div>
+          <div class="planet-item pi-mars">
+            <div class="pi-orb"><div class="pi-surface"></div><div class="pi-shine"></div></div>
+            <h4>Mars</h4>
+            <p>Red Planet</p>
+            <span class="pi-dist">1.52 AU</span>
+          </div>
+          <div class="planet-item pi-jupiter">
+            <div class="pi-orb"><div class="pi-surface"></div><div class="pi-shine"></div></div>
+            <h4>Jupiter</h4>
+            <p>Gas Giant</p>
+            <span class="pi-dist">5.20 AU</span>
+          </div>
+          <div class="planet-item pi-saturn">
+            <div class="pi-orb pi-has-ring"><div class="pi-surface"></div><div class="pi-ring"></div><div class="pi-shine"></div></div>
+            <h4>Saturn</h4>
+            <p>Ringed Giant</p>
+            <span class="pi-dist">9.58 AU</span>
+          </div>
+          <div class="planet-item pi-uranus">
+            <div class="pi-orb"><div class="pi-surface"></div><div class="pi-shine"></div></div>
+            <h4>Uranus</h4>
+            <p>Ice Giant</p>
+            <span class="pi-dist">19.2 AU</span>
+          </div>
+          <div class="planet-item pi-neptune">
+            <div class="pi-orb"><div class="pi-surface"></div><div class="pi-shine"></div></div>
+            <h4>Neptune</h4>
+            <p>Windy World</p>
+            <span class="pi-dist">30.1 AU</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSIONS SECTION -->
+  <section class="missions-section" id="missions">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-rocket"></i> Space Missions</span>
+        <h2 class="section-title">Active <span class="accent">Missions</span></h2>
+        <p class="section-sub">Tracking humanity's most ambitious ventures into the cosmos</p>
+      </div>
+
+      <div class="mission-list">
+        <div class="mission-card">
+          <div class="mc-num">01</div>
+          <div class="mc-icon"><i class="fas fa-rocket"></i></div>
+          <div class="mc-body">
+            <h3>James Webb Space Telescope</h3>
+            <p>Peering at galaxies formed just 200 million years after the Big Bang — rewriting our understanding of cosmic dawn.</p>
+            <div class="mc-tags">
+              <span>NASA</span><span>ESA</span><span>Deep Field</span>
+            </div>
+          </div>
+          <div class="mc-status"><span class="ms-active"><i class="fas fa-circle"></i> Active</span><span>Since 2021</span></div>
+        </div>
+
+        <div class="mission-card">
+          <div class="mc-num">02</div>
+          <div class="mc-icon"><i class="fas fa-mars"></i></div>
+          <div class="mc-body">
+            <h3>Perseverance Rover</h3>
+            <p>Searching for biosignatures in the ancient river delta of Jezero Crater on the Martian surface.</p>
+            <div class="mc-tags">
+              <span>NASA</span><span>Mars</span><span>Astrobiology</span>
+            </div>
+          </div>
+          <div class="mc-status"><span class="ms-active"><i class="fas fa-circle"></i> Active</span><span>Since 2020</span></div>
+        </div>
+
+        <div class="mission-card">
+          <div class="mc-num">03</div>
+          <div class="mc-icon"><i class="fas fa-satellite"></i></div>
+          <div class="mc-body">
+            <h3>Voyager 1</h3>
+            <p>Now in interstellar space — the farthest human-made object, over 23 billion km from Earth.</p>
+            <div class="mc-tags">
+              <span>NASA</span><span>Interstellar</span><span>Pioneer</span>
+            </div>
+          </div>
+          <div class="mc-status"><span class="ms-active"><i class="fas fa-circle"></i> Active</span><span>Since 1977</span></div>
+        </div>
+
+        <div class="mission-card">
+          <div class="mc-num">04</div>
+          <div class="mc-icon"><i class="fas fa-moon"></i></div>
+          <div class="mc-body">
+            <h3>Artemis Program</h3>
+            <p>Returning humans to the lunar surface and establishing a permanent presence — gateway to Mars and beyond.</p>
+            <div class="mc-tags">
+              <span>NASA</span><span>Lunar</span><span>Crewed</span>
+            </div>
+          </div>
+          <div class="mc-status"><span class="ms-pending"><i class="fas fa-circle"></i> In Progress</span><span>2024–2030</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OBSERVATORY SECTION -->
+  <section class="observatory-section" id="observatory">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-telescope"></i> Stargazing</span>
+        <h2 class="section-title">Join the <span class="accent">Observatory</span></h2>
+        <p class="section-sub">Connect with fellow astronomers and access premium deep-space data</p>
+      </div>
+
+      <div class="obs-grid">
+        <div class="obs-feature">
+          <div class="obs-icon"><i class="fas fa-telescope"></i></div>
+          <h3>Live Telescope Feed</h3>
+          <p>Stream real-time imagery from our network of observatories positioned across the globe.</p>
+        </div>
+        <div class="obs-feature">
+          <div class="obs-icon"><i class="fas fa-database"></i></div>
+          <h3>Star Catalog Access</h3>
+          <p>Query over 1.7 billion celestial objects from the Gaia mission database.</p>
+        </div>
+        <div class="obs-feature">
+          <div class="obs-icon"><i class="fas fa-users"></i></div>
+          <h3>Astronomer Community</h3>
+          <p>Join 240,000+ citizen scientists contributing to real astronomical research.</p>
+        </div>
+        <div class="obs-feature">
+          <div class="obs-icon"><i class="fas fa-bell"></i></div>
+          <h3>Event Alerts</h3>
+          <p>Never miss a lunar eclipse, meteor shower, or planetary alignment with smart alerts.</p>
+        </div>
+      </div>
+
+      <div class="obs-cta">
+        <button class="btn-primary btn-xl"><i class="fas fa-star"></i> Join Xenos Observatory</button>
+        <p>Free forever · No credit card · Instant access</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <span class="logo-icon"><i class="fas fa-atom"></i></span>
+            <span class="logo-text">XENOS<span class="logo-accent">|</span>SPACE</span>
+          </div>
+          <p>Exploring the infinite cosmos through data, discovery, and wonder.</p>
+          <div class="ft-socials">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#">Cosmos Dashboard</a></li>
+            <li><a href="#">Galaxy Catalog</a></li>
+            <li><a href="#">Planet Explorer</a></li>
+            <li><a href="#">Missions</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Star Atlas</a></li>
+            <li><a href="#">Telescope Guide</a></li>
+            <li><a href="#">Space News</a></li>
+            <li><a href="#">Data Portal</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="#">Observatory</a></li>
+            <li><a href="#">Forums</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Xenos | Space. All rights reserved.</p>
+        <p>Made with <i class="fas fa-heart"></i> for the cosmos</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
